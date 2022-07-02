@@ -1,0 +1,30 @@
+{
+  "name": "muthelang",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dandyraka/MutheLang.git"
+  },
+  "keywords": [
+    "muthelang",
+    "muthe",
+    "jkt48",
+    "muthe",
+    "jkt48"
+  ],
+  "author": "dandyraka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dandyraka/MutheLang/issues"
+  },
+  "homepage": "https://github.com/dandyraka/MutheLang#readme",
+  "dependencies": {
+    "inquirer": "^9.0.0"
+  },
+  "type": "module"
+}
