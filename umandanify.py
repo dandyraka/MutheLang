@@ -53,4 +53,4 @@ def umandanify(ss):
     return ss
 
 for line in sys.stdin:
-	print(umandanify(stemming(line.lower())))
+    print(umandanify(stemming(line.lower())))
