@@ -13,4 +13,4 @@ Example:
 `peregeteles` = `pegel`  
 `maiden tupru les` = `mantul`
 
-[Referensi](https://www.youtube.com/watch?v=QHUsr2FTmzQ)
+[Referensi](https://www.tiktok.com/search?q=bahasa%20muthe&t=1681973816022)
