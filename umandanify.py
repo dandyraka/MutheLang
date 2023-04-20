@@ -24,7 +24,7 @@ def stemming(sentence):
     ss = re.sub("\s+", " ", result)
     result = ""
     for s in ss.split(" "):
-        if len(s) == 3 and s[:2] != "ng":
+        if len(s) == 3 and s[:2] != "ng" and s[:2] != "ny":
             result += s[0] + " " + s[1:]
         elif len(s) == 4 and s[:2] == "ng":
             result += s[:2] + " " + s[2:]
