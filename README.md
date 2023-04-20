@@ -19,6 +19,6 @@ Run `npm start`
 - suku kata o + pro  
 - huruf mati + es  
 - ng mati = strengen (ex sayang => saiden yaiden strengen)  
-- ng hidup = ngaiden (ex tangan => taiden ngaiden)
+- ng hidup = ngaiden (ex tangan => taiden ngaiden nes)
 
 [Referensi](https://www.tiktok.com/search?q=bahasa%20muthe&t=1681973816022)
