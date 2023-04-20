@@ -1,47 +1,53 @@
 import inquirer from 'inquirer';
 
-let ngapain = await inquirer
-    .prompt([{
-        type: 'list',
-        name: 'what',
-        message: 'Mau ngapain?',
-        choices: ['MutheIn', 'unMuthe']
-    }, ])
-    .then(answers => {
-        return answers.what;
-    });
+const toMutheLang = (sentence) => {
+    const translatedWords = sentence
+        .split(' ')
+        .map((word) => {
+            let translatedWord = '';
+            for (const letter of word) {
+                const vowelMapping = {
+                    'a': 'aiden ',
+                    'e': 'epre ',
+                    'i': 'ipri ',
+                    'o': 'opro ',
+                    'u': 'upru '
+                };
+                translatedWord += vowelMapping[letter.toLowerCase()] || letter;
+            }
+            translatedWord = translatedWord.replace(/\b([b-df-hj-np-tv-z])(?!\w)/gi, '$1es');
+            return translatedWord;
+        });
 
-let kata = await inquirer
-    .prompt([{
-        type: 'input',
-        name: 'kata',
-        message: 'Apa?',
-    }, ])
-    .then(answers => {
-        return answers.kata;
-    });
+    return translatedWords.join(' ').trim().replace(/\s{2,}/g, ' ');
+};
 
+const unMuthe = (sentence) => {
+    return sentence
+        .replace(/(iden|pre|pru|pro|pri)/gi, '')
+        .replace(/(.)(es)/gi, '$1');
+};
 
-function toMutheLang(word){
-    let kata = word;
-    const allWords = kata.match(/\w/gi);
-    allWords.forEach((kt, i) => {
-        if(kt === "a") allWords[i] = "aiden";
-        if(kt === "i") allWords[i] = "ipri";
-        if(kt === "u") allWords[i] = "upru";
-        if(kt === "e") allWords[i] = "epre";
-        if(kt === "o") allWords[i] = "opro";
-    });
-    return allWords;
-}
+const ngapain = await inquirer
+    .prompt([
+        {
+            type: 'list',
+            name: 'what',
+            message: 'Mau ngapain?',
+            choices: ['MutheIn', 'unMuthe']
+        }
+    ])
+    .then(({ what }) => what);
 
-//aiden depre gaiden maiden upru maiden kaiden naiden nes saiden tepre
-//let unMutheLang = kata.replace(/(iden|pre|pru|pro|pri)/gim, '').replace(/((\w)es)/gim, '');
+const kata = await inquirer
+    .prompt([
+        {
+            type: 'input',
+            name: 'kata',
+            message: 'Apa?'
+        }
+    ])
+    .then(({ kata }) => kata);
 
-let hasil = "";
-if(ngapain == "MutheIn"){
-    hasil = toMutheLang(kata)
-} else if(ngapain == "unMuthe"){
-    hasil = kata.replace(/(iden|pre|pru|pro|pri)/gim, '').replace(/((\w)es)/gim, '');
-}
-console.log(hasil);
+const hasil = (ngapain == "MutheIn") ? toMutheLang(kata) : unMuthe(kata)
+console.log(`Hasil: ${hasil}`);
