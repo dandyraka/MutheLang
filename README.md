@@ -6,9 +6,13 @@ Install `npm i`
 Run `npm start`
 
 - Python  
+> **Umandanify**  
 `python umandanify.py < input.txt` atau  
-`echo "teks yang ingin dikonversi" | python umandanify.py`
+`echo "teks yang ingin dikonversi" | python umandanify.py`  
 
+> **Deumandanify**  
+`python deumandanify.py < input.txt` atau  
+`echo "tepre kes ses yaiden strengen ipri ngipri nes dipri kopro nes vepre res sipri" | python deumandanify.py`
 ------
 
 ### Rumus:  
