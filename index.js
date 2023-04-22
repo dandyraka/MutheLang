@@ -28,7 +28,7 @@ const umandanify = (sentence) => {
     const ss = result.replace(/\s+/g, " ");
     result = "";
     for (const s of ss.split(" ")) {
-        if (s.length === 3 && s.slice(0, 2) !== "ng") {
+        if (s.length === 3 && s.slice(0, 2) !== "ng" && s.slice(0, 2) !== "ny") {
             result += s[0] + " " + s.slice(1);
         } else if (s.length === 4 && s.slice(0, 2) === "ng") {
             result += s.slice(0, 2) + " " + s.slice(2);
